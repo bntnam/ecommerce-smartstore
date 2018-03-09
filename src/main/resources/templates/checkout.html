@@ -206,7 +206,7 @@
                                     <!--Credit Card Information-->
                                     <div class="row">
                                         <div class="col-xs-12">
-                                            <img th:src="@{/image/creditCard.png}" class="img-responsive"/> <br/>
+                                            <img th:src="@{/image/creditcard.png}" class="img-responsive"/> <br/>
                                             <div class="form-group">
                                                 <label for="cardType">* Select Card Type: </label>
                                                 <select class="form-control" id="cardType" name="type"
@@ -407,7 +407,7 @@
                                         <div class="col-xs-2">
                                             <a th:href="@{/bookDetail(id=${cartItem.book.id})}">
                                                 <img class="img-responsive shelf-book"
-                                                     th:src="#{adminPath}+@{/image/book/}+${cartItem.book.id}+'.png'"
+                                                     th:src="@{/image/book/}+${cartItem.book.id}+'.png'"
                                                      style="width: 70px;"/>
                                             </a>
                                         </div>
