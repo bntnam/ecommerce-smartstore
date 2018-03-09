@@ -69,7 +69,7 @@ public class SearchController {
 
         model.addAttribute("bookList", bookList);
 
-        return "bookShelf";
+        return "bookshelf";
     }
 
 }
