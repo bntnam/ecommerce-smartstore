@@ -26,11 +26,9 @@ public class EcommerceBookstoreApplication implements CommandLineRunner {
 	@Override
 	public void run(String... strings) throws Exception {
 		User user1 = new User();
-		user1.setFirstName("John");
-		user1.setLastName("Adams");
-		user1.setUsername("j");
-		user1.setPassword(SecurityUtility.passwordEncoder().encode("j"));
-		user1.setEmail("jadams@gmail.com");
+		user1.setUsername("user");
+		user1.setPassword(SecurityUtility.passwordEncoder().encode("user"));
+		user1.setEmail("user@gmail.com");
 
 		Set<UserRole> userRoles1 = new HashSet<>();
 
