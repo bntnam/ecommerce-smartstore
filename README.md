@@ -1,5 +1,5 @@
 <h1>Nam's Ecommerce Bookstore</h1>
-<img class="img-fluid" src="https://bntnam.github.io/img/portfolio/entity-relationship-diagram.png" alt="">
+<img class="img-fluid" src="https://bntnam.github.io/img/portfolio/bntn-ecommerce-bookstore.png" alt="">
 <h3>1. Introduction</h3>
 <p>- User interface: <a href="https://bntn-ecommerce-bookstore.herokuapp.com/">https://bntn-ecommerce-bookstore.herokuapp.com</a></p>
 <p>- Admin portal: <a href="https://bntn-ecommerce-bookstore.herokuapp.com/admin">https://bntn-ecommerce-bookstore.herokuapp.com/admin</a></p>
