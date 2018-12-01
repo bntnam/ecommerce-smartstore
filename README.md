@@ -12,6 +12,7 @@
     <li><strong>Backend:</strong> Java, Spring (Spring Boot, Spring MVC, Spring Data JPA, Spring Security), Hibernate/JPA.</li>
     <li><strong>Frontend:</strong> HTML, CSS, JavaScript, Bootstrap, Thymleaf and some libraries/tools.</li>
     <li><strong>Database:</strong> MySQL.</li>
+    <li><strong>Hosting:</strong> Heroku.</li>
 </ul>
 <h3>3. Feature</h3>
 <p>- There are 2 parts of the project: User and Admin.</p>
