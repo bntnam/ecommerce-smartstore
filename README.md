@@ -7,7 +7,6 @@
 <p>- Source Code: <a href="https://github.com/bntnam/bntn-ecommerce-bookstore">https://github.com/bntnam/bntn-ecommerce-bookstore</a></p>
 <p>- The Webapp and Database are deployed on free hosting Heroku. Therefore, it's gonna take longer at the first time loading. Afterthat, the webapp will run normally.</p>
 <h3>2. Technologies</h3>
-<p>- Technology: (note that here I focused on backend more, because my field is Java)</p>
 <ul>
     <li><strong>Backend:</strong> Java, Spring (Spring Boot, Spring MVC, Spring Data JPA, Spring Security), Hibernate/JPA.</li>
     <li><strong>Frontend:</strong> HTML, CSS, JavaScript, Bootstrap, Thymleaf and some libraries/tools.</li>
