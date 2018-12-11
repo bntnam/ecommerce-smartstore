@@ -18,7 +18,7 @@
 <p>- I created sample User and Admin to let you take a look easier :</p>
 <p><strong>a) User:</strong></p>
 <p>+ ID: user</p>
-<p>+ Passowrd: user</p>
+<p>+ Password: user</p>
 <ul>
     <li>You can create an account, update information, change password and forget password. Your password will be sent automatically to your registered email.</li>
     <li>Add your shipping address, billing address, card payment information.</li>
@@ -26,7 +26,7 @@
 </ul>
 <p><strong>b) Admin:</strong></p>
 <p>+ ID: admin</p>
-<p>+ Passowrd: admin</p>
+<p>+ Password: admin</p>
 <ul>
     <li>You can only access admin page with admin ID (the access would be denied if you tried to access with user ID): <a href="https://bntn-ecommerce-bookstore.herokuapp.com/admin">https://bntn-ecommerce-bookstore.herokuapp.com/admin</a> </li>
     <li>After accessing admin portal, you can add new books, edit and delete.</li>
