@@ -33,4 +33,4 @@
 </ul>
 <h3>4. Architecture</h3>
 <p>- Entity-Relationship Diagram</p>
-<img class="img-fluid text-center" src="https://bntnam.github.io/img/portfolio/entity-relationship-diagram.png">
+<img class="img-fluid text-center" src="http://bntnam.com/img/portfolio/entity-relationship-diagram.png">
