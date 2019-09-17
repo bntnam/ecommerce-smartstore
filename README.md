@@ -1,4 +1,4 @@
-<h1>Nam's Ecommerce Bookstore</h1>
+<h1>Nam's Bookstore</h1>
 <img class="img-fluid" src="https://bntnam.github.io/img/portfolio/ecommerce-bookstore.png" alt="">
 <h3>1. Introduction</h3>
 <p>- User interface: <a href="https://bntn-ecommerce-bookstore.herokuapp.com/">https://bntn-ecommerce-bookstore.herokuapp.com</a></p>
