@@ -1,9 +1,8 @@
 <h1>Bookstore Web Application</h1>
 <h3>1. Introduction</h3>
-<p>- User interface: <a href="https://bntn-ecommerce-bookstore.herokuapp.com/">https://bntn-ecommerce-bookstore.herokuapp.com</a></p>
-<p>- Admin portal: <a href="https://bntn-ecommerce-bookstore.herokuapp.com/admin">https://bntn-ecommerce-bookstore.herokuapp.com/admin</a></p>
+<p>- User interface: <a href="http://bntnam-bookstore.herokuapp.com/">http://bntnam-bookstore.herokuapp.com/</a></p>
+<p>- Admin portal: <a href="http://bntnam-bookstore.herokuapp.com/">http://bntnam-bookstore.herokuapp.com/</a></p>
 <p>(Note: Please note that maybe some functions do not work properly because of the hosting, the time of deployment, etc. <br/>I just show my understanding and my codebase of the project.)</p>
-<p>- Source Code: <a href="https://github.com/bntnam/bntn-ecommerce-bookstore">https://github.com/bntnam/bntn-ecommerce-bookstore</a></p>
 <p>- The Webapp and Database are deployed on free hosting Heroku. Therefore, it's gonna take longer at the first time loading. Afterthat, the webapp will run normally.</p>
 <h3>2. Technologies</h3>
 <ul>
