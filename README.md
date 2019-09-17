@@ -25,7 +25,7 @@
 <p>+ ID: admin</p>
 <p>+ Password: admin</p>
 <ul>
-    <li>You can only access admin page with admin ID (the access would be denied if you tried to access with user ID): <a href="https://bntn-ecommerce-bookstore.herokuapp.com/admin">https://bntn-ecommerce-bookstore.herokuapp.com/admin</a> </li>
+    <li>You can only access admin page with admin ID (the access would be denied if you tried to access with user ID): <a href="http://bntnam-bookstore.herokuapp.com/">http://bntnam-bookstore.herokuapp.com/</a></li>
     <li>After accessing admin portal, you can add new books, edit and delete.</li>
 </ul>
 <h3>4. Architecture</h3>
