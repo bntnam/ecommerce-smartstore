@@ -30,20 +30,10 @@
         <nav class="navbar navbar-default navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" th:href="@{/}">NAM'S BOOKSTORE</a>
+                    <a class="navbar-brand" th:href="@{/}">WATCHSTORE</a>
                 </div>
                 <div id="navbar">
                     <ul class="nav navbar-nav navbar-left">
-                        <li class="dropdown">
-                            <a th:href="@{/watchStore}" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-haspopup="true"
-                               aria-expanded="false">BOOKS <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a th:href="@{/watchStore}">Browse the Watchstore</a></li>
-                                <li><a th:href="@{/hours}">Store hours &#38; Directions</a></li>
-                                <li><a th:href="@{/faq}">FAQ</a></li>
-                            </ul>
-                        </li>
                         <form class="navbar-form" th:action="@{/searchBook}" method="post">
                             <div class="form-group">
                                 <input type="text" name="keyword" class="form-control" placeholder="Book title"/>

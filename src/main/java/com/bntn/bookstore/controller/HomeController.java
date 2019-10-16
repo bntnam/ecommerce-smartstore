@@ -84,18 +84,6 @@ public class HomeController {
         return "403";
     }
 
-    @RequestMapping("/hours")
-    public String hours() {
-
-        return "hours";
-    }
-
-    @RequestMapping("/faq")
-    public String faq() {
-
-        return "faq";
-    }
-
     @RequestMapping("/watchStore")
     public String watchStore(Model model,
                             Principal principal) {
