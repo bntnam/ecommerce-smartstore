@@ -62,7 +62,7 @@ public class HomeController {
     @RequestMapping("/")
     public String index() {
 
-        return "index";
+        return "watchStore";
     }
 
     @RequestMapping("/login")
@@ -96,8 +96,8 @@ public class HomeController {
         return "faq";
     }
 
-    @RequestMapping("/bookshelf")
-    public String bookshelf(Model model,
+    @RequestMapping("/watchStore")
+    public String watchStore(Model model,
                             Principal principal) {
         if (principal != null) {
             String username = principal.getName();
@@ -109,7 +109,7 @@ public class HomeController {
         model.addAttribute("bookList", bookList);
         model.addAttribute("activeAll", true);
 
-        return "bookshelf";
+        return "watchStore";
     }
 
     @RequestMapping("/bookDetail")

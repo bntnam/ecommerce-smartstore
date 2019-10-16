@@ -33,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/forgetPassword",
             "/login",
             "/fonts/**",
-            "/bookshelf",
+            "/watchStore",
             "/bookDetail",
             "/hours",
             "/faq",

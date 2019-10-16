@@ -28,7 +28,7 @@
             <div class="col-xs-12">
                 <div class="row">
                     <div class="col-xs-6 text-left">
-                        <a th:href="@{/bookshelf}" class="btn btn-warning">Continue Shopping</a>
+                        <a th:href="@{/watchStore}" class="btn btn-warning">Continue Shopping</a>
                     </div>
                     <div class="col-xs-6 text-right">
                         <a th:href="@{/checkout(id=${shoppingCart.id})}" class="btn btn-primary">Check Out</a>
@@ -38,7 +38,7 @@
                         Oops, some of the products do not have enough stock. Please update product quantity.
                     </div>
                     <div th:if="${emptyCart}" class="alert alert-warning">
-                        Oops, your cart is empty. See if you can find what you like in the bookshelf and add them to
+                        Oops, your cart is empty. See if you can find what you like in the Watchstore and add them to
                         cart.
                     </div>
 

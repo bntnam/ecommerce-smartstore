@@ -27,7 +27,7 @@
             <div class="col-xs-3">
                 <h3><label for="category">Category</label></h3>
                 <div class="list-group" id="category">
-                    <a th:href="@{/bookshelf(category='all')}" th:classappend="${activeAll}? 'active'" class="list-group-item">All</a>
+                    <a th:href="@{/watchStore(category='all')}" th:classappend="${activeAll}? 'active'" class="list-group-item">All</a>
                     <a th:href="@{/searchByCategory(category='Management')}" th:classappend="${activeManagement}? 'active'" class="list-group-item">Management</a>
                     <a th:href="@{/searchByCategory(category='Fiction')}" th:classappend="${activeFiction}? 'active'" class="list-group-item">Fiction</a>
                     <a th:href="@{/searchByCategory(category='Bussiness')}" th:classappend="${activeBussiness}? 'active'" class="list-group-item">Bussiness</a>
