@@ -42,12 +42,12 @@ public class SearchController {
 
         if (bookList.isEmpty()) {
             model.addAttribute("emptyList", true);
-            return "bookshelf";
+            return "watchStore";
         }
 
         model.addAttribute("bookList", bookList);
 
-        return "bookshelf";
+        return "watchStore";
     }
 
     @RequestMapping("/searchBook")
@@ -64,12 +64,12 @@ public class SearchController {
 
         if (bookList.isEmpty()) {
             model.addAttribute("emptyList", true);
-            return "bookshelf";
+            return "watchStore";
         }
 
         model.addAttribute("bookList", bookList);
 
-        return "bookshelf";
+        return "watchStore";
     }
 
 }
