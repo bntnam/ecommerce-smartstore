@@ -9,7 +9,7 @@ hr {
 }
 
 .container {
-  width: 90%;
+  width: 100%;
 }
 
 .banner {
@@ -21,7 +21,6 @@ hr {
 }
 
 .navbar {
-  margin-bottom: 20px;
   border-radius: 0;
 }
 
@@ -72,7 +71,7 @@ hr {
 
 .copyright {
   min-height: 40px;
-  background-color: #222222;
+  background-color: #000000;
 }
 
 .copyright p {
