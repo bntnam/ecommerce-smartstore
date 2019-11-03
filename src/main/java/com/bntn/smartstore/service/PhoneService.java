@@ -13,7 +13,7 @@ public interface PhoneService {
 
     void removeOne(Long id);
 
-    List<Phone> findByCategory(String category);
+    List<Phone> findByBrand(String brand);
 
-    List<Phone> blurrySearch(String title);
+    List<Phone> blurrySearch(String model);
 }

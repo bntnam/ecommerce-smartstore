@@ -35,7 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/fonts/**",
             "/smartStore",
             "/phoneDetail",
-            "/searchByCategory",
+            "/searchByBrand",
             "/searchPhone"
     };
 

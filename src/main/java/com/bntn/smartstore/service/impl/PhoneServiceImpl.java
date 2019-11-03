@@ -45,8 +45,8 @@ public class PhoneServiceImpl implements PhoneService {
     }
 
     @Override
-    public List<Phone> findByCategory(String category) {
-        List<Phone> phoneList = phoneRepository.findByCategory(category);
+    public List<Phone> findByBrand(String brand) {
+        List<Phone> phoneList = phoneRepository.findByBrand(brand);
 
         List<Phone> activePhoneList = new ArrayList<>();
 
@@ -60,8 +60,8 @@ public class PhoneServiceImpl implements PhoneService {
     }
 
     @Override
-    public List<Phone> blurrySearch(String title) {
-        List<Phone> phoneList = phoneRepository.findByTitleContaining(title);
+    public List<Phone> blurrySearch(String model) {
+        List<Phone> phoneList = phoneRepository.findByModelContaining(model);
         List<Phone> activePhoneList = new ArrayList<>();
 
         for (Phone phone : phoneList) {

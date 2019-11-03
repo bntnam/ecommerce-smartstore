@@ -23,8 +23,8 @@ public class SearchController {
     @Autowired
     private PhoneService phoneService;
 
-    @RequestMapping("/searchByCategory")
-    public String searchByCategory(@RequestParam("category") String category,
+    @RequestMapping("/searchByBrand")
+    public String searchByBrand(@RequestParam("brand") String brand,
                                    Model model,
                                    Principal principal) {
         if (principal != null) {
@@ -33,12 +33,12 @@ public class SearchController {
             model.addAttribute("user", user);
         }
 
-        String classActiveCategory = "active" + category;
-        classActiveCategory = classActiveCategory.replaceAll("\\s+", "");
-        classActiveCategory = classActiveCategory.replaceAll("&", "");
-        model.addAttribute(classActiveCategory, true);
+        String classActiveBrand = "active" + brand;
+        classActiveBrand = classActiveBrand.replaceAll("\\s+", "");
+        classActiveBrand = classActiveBrand.replaceAll("&", "");
+        model.addAttribute(classActiveBrand, true);
 
-        List<Phone> phoneList = phoneService.findByCategory(category);
+        List<Phone> phoneList = phoneService.findByBrand(brand);
 
         if (phoneList.isEmpty()) {
             model.addAttribute("emptyList", true);

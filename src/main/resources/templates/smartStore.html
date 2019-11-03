@@ -14,17 +14,17 @@
 
         <div class="row" style="width: 90%; margin: 0 auto; margin-bottom: 100px;">
             <div class="col-xs-3">
-                <h3><label for="category">Category</label></h3>
-                <div class="list-group" id="category">
-                    <a th:href="@{/smartStore(category='all')}" th:classappend="${activeAll}? 'active'" class="list-group-item">All</a>
-                    <a th:href="@{/searchByCategory(category='Management')}" th:classappend="${activeManagement}? 'active'" class="list-group-item">Management</a>
-                    <a th:href="@{/searchByCategory(category='Fiction')}" th:classappend="${activeFiction}? 'active'" class="list-group-item">Fiction</a>
-                    <a th:href="@{/searchByCategory(category='Bussiness')}" th:classappend="${activeBussiness}? 'active'" class="list-group-item">Bussiness</a>
-                    <a th:href="@{/searchByCategory(category='Novel')}" th:classappend="${activeNovel}? 'active'" class="list-group-item">Novel</a>
-                    <a th:href="@{/searchByCategory(category='Entertainment')}" th:classappend="${activeEntertainment}? 'active'" class="list-group-item">Entertainment</a>
-                    <a th:href="@{/searchByCategory(category='Engineering')}" th:classappend="${activeEngineering}? 'active'" class="list-group-item">Engineering</a>
-                    <a th:href="@{/searchByCategory(category='Programming')}" th:classappend="${activeProgramming}? 'active'" class="list-group-item">Programming</a>
-                    <a th:href="@{/searchByCategory(category='Art &amp; Literature')}" th:classappend="${activeArtsLiterature}? 'active'" class="list-group-item">Art &amp; Literature</a>
+                <h3><label for="brand">Brand</label></h3>
+                <div class="list-group" id="brand">
+                    <a th:href="@{/smartStore(brand='all')}" th:classappend="${activeAll}? 'active'" class="list-group-item">All</a>
+                    <a th:href="@{/searchByBrand(brand='Apple')}" th:classappend="${activeApple}? 'active'" class="list-group-item">Apple</a>
+                    <a th:href="@{/searchByBrand(brand='Samsung')}" th:classappend="${activeSamsung}? 'active'" class="list-group-item">Samsung</a>
+                    <a th:href="@{/searchByBrand(brand='Huawei')}" th:classappend="${activeHuawei}? 'active'" class="list-group-item">Huawei</a>
+                    <a th:href="@{/searchByBrand(brand='Google')}" th:classappend="${activeGoogle}? 'active'" class="list-group-item">Google</a>
+                    <a th:href="@{/searchByBrand(brand='Sony')}" th:classappend="${activeSony}? 'active'" class="list-group-item">Sony</a>
+                    <a th:href="@{/searchByBrand(brand='Nokia')}" th:classappend="${activeNokia}? 'active'" class="list-group-item">Nokia</a>
+                    <a th:href="@{/searchByBrand(brand='OnePlus')}" th:classappend="${activeOnePlus}? 'active'" class="list-group-item">OnePlus</a>
+                    <a th:href="@{/searchByBrand(brand='Oppo')}" th:classappend="${activeOppo}? 'active'" class="list-group-item">Oppo</a>
                 </div>
             </div>
             <div class="col-xs-9">
@@ -47,9 +47,9 @@
                                             <a th:href="@{/phoneDetail?id=}+${phone.id}"><img th:src="@{/image/phone/}+${phone.id}+'.png'" alt="" class="img-responsive shelf-phone"/></a>
                                         </div>
                                         <div class="col-xs-9">
-                                            <a th:href="@{/phoneDetail?id=}+${phone.id}"><h4 th:text="${phone.title}" style="display: inline;"></h4></a>
-                                            <small th:text="${phone.publicationDate}"></small> <br/>
-                                            by <i><span th:text="${phone.author}"></span></i> <br/>
+                                            <a th:href="@{/phoneDetail?id=}+${phone.id}"><h4 th:text="${phone.model}" style="display: inline;"></h4></a>
+                                            <br/>
+                                            by <i><span th:text="${phone.company}"></span></i> <br/>
                                             <a th:href="@{/phoneDetail?id=}+${phone.id}"><span style="font-size: x-large; color: #db3208;">$<span th:text="${#numbers.formatDecimal(phone.ourPrice, 0, 'COMMA', 2, 'POINT')}"></span></span></a>
                                             <span style="text-decoration: line-through">$<span th:text="${#numbers.formatDecimal(phone.listPrice, 0, 'COMMA', 2, 'POINT')}"></span></span>
                                             <p th:utext="${#strings.abbreviate(phone.description, 2000)}"></p>

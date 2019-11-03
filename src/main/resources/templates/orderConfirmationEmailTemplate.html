@@ -72,7 +72,7 @@
         </thead>
         <tbody>
             <tr th:each="cartItem : ${cartItemList}">
-                <td><span data-th-text="${cartItem.phone.title}"></span></td>
+                <td><span data-th-text="${cartItem.phone.model}"></span></td>
                 <td class="text-center" data-th-text="${cartItem.phone.ourPrice}"></td>
                 <td class="text-center" data-th-text="${cartItem.qty}"></td>
                 <td class="text-center" data-th-text="${cartItem.subtotal}"></td>

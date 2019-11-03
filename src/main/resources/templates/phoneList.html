@@ -12,9 +12,9 @@
             <table id="phoneListTable" class="table table-bordered table-hover table-striped">
                 <thead>
                     <tr>
-                        <th>Title</th>
-                        <th>Author</th>
-                        <th>Category</th>
+                        <th>Model</th>
+                        <th>Company</th>
+                        <th>Brand</th>
                         <th>List Price</th>
                         <th>Our Price</th>
                         <th>Active?</th>
@@ -24,9 +24,9 @@
                 <tbody>
                     <tr data-th-each="phone : ${phoneList}">
                         <!--<input hidden="hidden" name="id" th:value="${phone.id}"/>-->
-                        <td><a th:href="@{/admin/phone/phoneInfo(id=${phone.id})}"><span th:text="${phone.title}"></span></a></td>
-                        <td th:text="${phone.author}"></td>
-                        <td th:text="${phone.category}"></td>
+                        <td><a th:href="@{/admin/phone/phoneInfo(id=${phone.id})}"><span th:text="${phone.model}"></span></a></td>
+                        <td th:text="${phone.company}"></td>
+                        <td th:text="${phone.brand}"></td>
                         <td th:text="${phone.listPrice}"></td>
                         <td th:text="${phone.ourPrice}"></td>
                         <td th:text="${phone.active}"></td>

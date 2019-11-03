@@ -182,7 +182,7 @@
                                                             </thead>
                                                             <tbody>
                                                                 <tr th:each="cartItem : ${cartItemList}">
-                                                                    <td data-th-text="${cartItem.phone.title}"></td>
+                                                                    <td data-th-text="${cartItem.phone.model}"></td>
                                                                     <td class="text-center" data-th-text="${cartItem.phone.ourPrice}"></td>
                                                                     <td class="text-center" data-th-text="${cartItem.qty}"></td>
                                                                     <td class="text-center" data-th-text="${cartItem.subtotal}"></td>

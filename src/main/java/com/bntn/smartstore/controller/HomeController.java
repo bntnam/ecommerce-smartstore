@@ -93,21 +93,21 @@ public class HomeController {
         return "403";
     }
 
-    @RequestMapping("/smartStore")
-    public String smartStore(Model model,
-                             Principal principal) {
-        if (principal != null) {
-            String username = principal.getName();
-            User user = userService.findByUsername(username);
-            model.addAttribute("user", user);
-        }
+    // @RequestMapping("/smartStore")
+    // public String smartStore(Model model,
+    //                          Principal principal) {
+    //     if (principal != null) {
+    //         String username = principal.getName();
+    //         User user = userService.findByUsername(username);
+    //         model.addAttribute("user", user);
+    //     }
 
-        List<Phone> phoneList = phoneService.findAll();
-        model.addAttribute("phoneList", phoneList);
-        model.addAttribute("activeAll", true);
+    //     List<Phone> phoneList = phoneService.findAll();
+    //     model.addAttribute("phoneList", phoneList);
+    //     model.addAttribute("activeAll", true);
 
-        return "smartStore";
-    }
+    //     return "smartStore";
+    // }
 
     @RequestMapping("/phoneDetail")
     public String phoneDetail(

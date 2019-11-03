@@ -33,16 +33,12 @@
                 <div class="col-xs-9">
                     <h3><span th:if="${addPhoneSuccess}" style="color: forestgreen"><i class="fa fa-check" aria-hidden="true" style="color: forestgreen"></i>Added to cart.</span></h3>
                     <h3><span th:if="${notEnoughStock}" style="color: red">Oops, only <span th:text="${phone.inStockNumber}"></span> In Stock.</span></h3>
-                    <h3 th:text="${phone.title}">Phone Title</h3>
+                    <h3 th:text="${phone.model}">Phone Model</h3>
                     <div class="row">
                         <div class="col-xs-5">
-                            <h5><strong>Author: </strong><span th:text="${phone.author}"></span></h5>
-                            <p><strong>Publisher: </strong><span th:text="${phone.publisher}"></span></p>
-                            <p><strong>Publication Date: </strong><span th:text="${phone.publicationDate}"></span></p>
-                            <p><strong>Language: </strong><span th:text="${phone.language}"></span></p>
-                            <p><strong>Category: </strong><span th:text="${phone.category}"></span></p>
-                            <p><strong><span th:text="${phone.format}"></span>: </strong><span th:text="${phone.numberOfPages}"></span> pages</p>
-                            <p><strong>ISBN: </strong><span th:text="${phone.isbn}"></span></p>
+                            <h5><strong>Company: </strong><span th:text="${phone.company}"></span></h5>
+                            <p><strong>Brand: </strong><span th:text="${phone.brand}"></span></p>
+                            <p><strong>ASIN: </strong><span th:text="${phone.asin}"></span></p>
                             <p><strong>Shipping Weight: </strong><span th:text="${phone.shippingWeight}"></span> ounces</p>
                         </div>
 
