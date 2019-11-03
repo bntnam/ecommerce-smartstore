@@ -16,140 +16,77 @@
                     </legend>
 
 
-                    <!-- Title -->
+                    <!-- Model -->
                     <div class="form-group">
-                        <label class="col-md-2 control-label" for="title">* Title</label>
+                        <label class="col-md-2 control-label" for="model">* Model</label>
 
                         <div class="col-md-8">
-                            <input type="text" name="title" class="form-control" id="title"
-                                   th:value="${phone.title}" required="required" placeholder="Title"/>
-                            <span class="help-block">Title of the phone</span>
+                            <input type="text" name="model" class="form-control" id="model"
+                                   th:value="${phone.model}" required="required" placeholder="Model"/>
+                            <span class="help-block">Model of the phone</span>
                         </div>
                     </div>
 
-                    <!-- Author -->
+                    <!-- Company -->
                     <div class="form-group">
-                        <label class="col-md-2 control-label" for="author">* Author</label>
+                        <label class="col-md-2 control-label" for="company">* Company</label>
                         <div class="col-md-8">
-                            <input type="text" name="author" class="form-control" id="author"
-                                   th:value="${phone.author}" required="required"
-                                   placeholder="Author"/>
-                            <span class="help-block">Author of the phone</span>
+                            <input type="text" name="company" class="form-control" id="company"
+                                   th:value="${phone.company}" required="required"
+                                   placeholder="Company"/>
+                            <span class="help-block">Company of the phone</span>
                         </div>
                     </div>
 
-                    <!-- Publisher -->
+                    <!-- Brand -->
                     <div class="form-group">
-                        <label class="col-md-2 control-label" for="publisher">Publisher</label>
+                        <label class="col-md-2 control-label" for="brand">*
+                            Brand</label>
                         <div class="col-md-8">
-                            <input type="text" name="publisher" class="form-control"
-                                   id="publisher" th:value="${phone.publisher}"
-                                   placeholder="Publisher"/>
-                            <span class="help-block">Publisher of the phone</span>
-                        </div>
-                    </div>
-
-                    <!-- Publication Date -->
-                    <div class="form-group">
-                        <label class="col-md-2 control-label" for="publicationDate">Publication Date</label>
-                        <div class="col-md-8">
-                            <input type="date" class="form-control" id="publicationDate"
-                                   name="publicationDate" th:value="${phone.publicationDate}"
-                                   placeholder="ublication Date"/>
-                            <span class="help-block">Publication Date of the phone</span>
-                        </div>
-                    </div>
-
-                    <!-- Language -->
-                    <div class="form-group">
-                        <label class="col-md-2 control-label" for="language">Language</label>
-                        <div class="col-md-8">
-                            <select th:value="${phone.language}" id="language" name="language"
-                                    class="form-control">
-                                <option value="English">English</option>
-                                <option value="Spanish">Spanish</option>
-                                <option value="Korean">Korean</option>
-                                <option value="Vietnamese">Vietnamese</option>
-                                <option value="Japanese">Japanese</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Category -->
-                    <div class="form-group">
-                        <label class="col-md-2 control-label" for="category">*
-                            Category</label>
-                        <div class="col-md-8">
-                            <select th:value="${phone.category}" id="category" name="category"
+                            <select th:value="${phone.brand}" id="brand" name="brand"
                                     class="form-control">
                                 <option value="" selected="selected" disabled="disabled">
                                     Please select an option...
                                 </option>
-                                <option value="Management"
-                                        th:selected="(${phone.category}=='Management')">Management
+                                <option value="Apple"
+                                        th:selected="(${phone.brand}=='Apple')">Apple
                                 </option>
-                                <option value="Business"
-                                        th:selected="(${phone.category}=='Business')">Business
+                                <option value="Huawei"
+                                        th:selected="(${phone.brand}=='Huawei')">Huawei
                                 </option>
-                                <option value="Novel"
-                                        th:selected="(${phone.category}=='Novel')">Novel
+                                <option value="Google"
+                                        th:selected="(${phone.brand}=='Google')">Google
                                 </option>
-                                <option value="Fiction"
-                                        th:selected="(${phone.category}=='Fiction')">Fiction
+                                <option value="Samsung"
+                                        th:selected="(${phone.brand}=='Samsung')">Samsung
                                 </option>
-                                <option value="Entertainment"
-                                        th:selected="(${phone.category}=='Entertainment')">Entertainment
+                                <option value="Sony"
+                                        th:selected="(${phone.brand}=='Sony')">Sony
                                 </option>
-                                <option value="Engineering"
-                                        th:selected="(${phone.category}=='Engineering')">Engineering
+                                <option value="Nokia"
+                                        th:selected="(${phone.brand}=='Nokia')">Nokia
                                 </option>
-                                <option value="Programming"
-                                        th:selected="(${phone.category}=='Programming')">Programming
+                                <option value="OnePlus"
+                                        th:selected="(${phone.brand}=='OnePlus')">OnePlus
                                 </option>
-                                <option value="Arts &amp; Literature"
-                                        th:selected="(${phone.category}=='Arts &amp; Literature')">
-                                    Arts &amp; Literature
+                                <option value="Oppo"
+                                        th:selected="(${phone.brand}=='Oppo')">Oppo
                                 </option>
                                 <option value="Other"
-                                        th:selected="(${phone.category}=='Other')">Other
+                                        th:selected="(${phone.brand}=='Other')">Other
                                 </option>
                             </select>
                         </div>
                     </div>
 
-                    <!-- Pages -->
+                    <!-- ASIN -->
                     <div class="form-group">
-                        <label class="col-md-2 control-label" for="pageNumber">Pages</label>
+                        <label class="col-md-2 control-label" for="asin">ASIN</label>
 
                         <div class="col-md-8">
-                            <input type="number" name="numberOfPages" class="form-control"
-                                   id="pageNumber" th:value="${phone.numberOfPages}"
-                                   placeholder="Page Number"/>
-                            <span class="help-block">Number of pages of the phone</span>
-                        </div>
-                    </div>
-
-                    <!-- Format -->
-                    <div class="form-group">
-                        <label class="col-md-2 control-label" for="format">Format</label>
-                        <div class="col-md-8">
-                            <select th:value="${phone.format}" id="format" name="format"
-                                    class="form-control">
-                                <option value="paperback">Paperback</option>
-                                <option value="hardcover">Hardcover</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- ISBN -->
-                    <div class="form-group">
-                        <label class="col-md-2 control-label" for="isbn">ISBN</label>
-
-                        <div class="col-md-8">
-                            <input type="text" name="isbn" class="form-control" id="isbn"
-                                   th:value="${phone.isbn}" placeholder="ISBN"/>
-                            <span class="help-block">ISBN of the phone</span>
+                            <input type="text" name="asin" class="form-control" id="asin"
+                                   th:value="${phone.asin}" placeholder="ASIN"/>
+                            <span class="help-block">ASIN of the phone</span>
                         </div>
                     </div>
 
@@ -231,7 +168,7 @@
 
                     <!-- Upload Image -->
                     <div class="form-group">
-                        <div class="col-md-2">
+                        <div class="col-md-2 control-label">
                             <label for="phoneImage">Upload phone image</label>
                         </div>
                         <div class="col-md-8">

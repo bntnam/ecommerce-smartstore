@@ -12,15 +12,10 @@ public class Phone {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String title;
-    private String author;
-    private String publisher;
-    private String publicationDate;
-    private String language;
-    private String category;
-    private int numberOfPages;
-    private String format;
-    private int isbn;
+    private String model;
+    private String company;
+    private String brand;
+    private int asin;
     private double shippingWeight;
     private double listPrice;
     private double ourPrice;
@@ -45,76 +40,36 @@ public class Phone {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getModel() {
+        return model;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setModel(String model) {
+        this.model = model;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getCompany() {
+        return company;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setCompany(String company) {
+        this.company = company;
     }
 
-    public String getPublisher() {
-        return publisher;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
-    public String getPublicationDate() {
-        return publicationDate;
+    public int getAsin() {
+        return asin;
     }
 
-    public void setPublicationDate(String publicationDate) {
-        this.publicationDate = publicationDate;
-    }
-
-    public String getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(String language) {
-        this.language = language;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public int getNumberOfPages() {
-        return numberOfPages;
-    }
-
-    public void setNumberOfPages(int numberOfPages) {
-        this.numberOfPages = numberOfPages;
-    }
-
-    public String getFormat() {
-        return format;
-    }
-
-    public void setFormat(String format) {
-        this.format = format;
-    }
-
-    public int getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(int isbn) {
-        this.isbn = isbn;
+    public void setAsin(int asin) {
+        this.asin = asin;
     }
 
     public double getShippingWeight() {
