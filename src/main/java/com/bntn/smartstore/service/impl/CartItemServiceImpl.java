@@ -1,7 +1,7 @@
 package com.bntn.smartstore.service.impl;
 
 import com.bntn.smartstore.model.*;
-import com.bntn.smartstore.repository.BookToCartItemRepository;
+import com.bntn.smartstore.repository.PhoneToCartItemRepository;
 import com.bntn.smartstore.repository.CartItemRepository;
 import com.bntn.smartstore.service.CartItemService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ public class CartItemServiceImpl implements CartItemService {
     private CartItemRepository cartItemRepository;
 
     @Autowired
-    private BookToCartItemRepository bookToCartItemRepository;
+    private PhoneToCartItemRepository phoneToCartItemRepository;
 
     @Override
     public List<CartItem> findByShoppingCart(ShoppingCart shoppingCart) {
@@ -26,7 +26,7 @@ public class CartItemServiceImpl implements CartItemService {
 
     @Override
     public CartItem updateCartItem(CartItem cartItem) {
-        BigDecimal bigDecimal = new BigDecimal(cartItem.getBook().getOurPrice()).multiply(new BigDecimal(cartItem.getQty()));
+        BigDecimal bigDecimal = new BigDecimal(cartItem.getPhone().getOurPrice()).multiply(new BigDecimal(cartItem.getQty()));
 
         bigDecimal = bigDecimal.setScale(2, BigDecimal.ROUND_HALF_UP);
         cartItem.setSubtotal(bigDecimal);
@@ -37,13 +37,13 @@ public class CartItemServiceImpl implements CartItemService {
     }
 
     @Override
-    public CartItem addBookToCartItem(Book book, User user, int qty) {
+    public CartItem addPhoneToCartItem(Phone phone, User user, int qty) {
         List<CartItem> cartItemList = findByShoppingCart(user.getShoppingCart());
 
         for (CartItem cartItem : cartItemList) {
-            if (book.getId() == cartItem.getBook().getId()) {
+            if (phone.getId() == cartItem.getPhone().getId()) {
                 cartItem.setQty(cartItem.getQty()+qty);
-                cartItem.setSubtotal(new BigDecimal(book.getOurPrice()).multiply(new BigDecimal(qty)));
+                cartItem.setSubtotal(new BigDecimal(phone.getOurPrice()).multiply(new BigDecimal(qty)));
                 cartItemRepository.save(cartItem);
                 return cartItem;
             }
@@ -51,16 +51,16 @@ public class CartItemServiceImpl implements CartItemService {
 
         CartItem cartItem = new CartItem();
         cartItem.setShoppingCart(user.getShoppingCart());
-        cartItem.setBook(book);
+        cartItem.setPhone(phone);
 
         cartItem.setQty(qty);
-        cartItem.setSubtotal(new BigDecimal(book.getOurPrice()).multiply(new BigDecimal(qty)));
+        cartItem.setSubtotal(new BigDecimal(phone.getOurPrice()).multiply(new BigDecimal(qty)));
         cartItem = cartItemRepository.save(cartItem);
 
-        BookToCartItem bookToCartItem = new BookToCartItem();
-        bookToCartItem.setBook(book);
-        bookToCartItem.setCartItem(cartItem);
-        bookToCartItemRepository.save(bookToCartItem);
+        PhoneToCartItem phoneToCartItem = new PhoneToCartItem();
+        phoneToCartItem.setPhone(phone);
+        phoneToCartItem.setCartItem(cartItem);
+        phoneToCartItemRepository.save(phoneToCartItem);
 
         return cartItem;
     }
@@ -72,7 +72,7 @@ public class CartItemServiceImpl implements CartItemService {
 
     @Override
     public void removeCartItem(CartItem cartItem) {
-        bookToCartItemRepository.deleteByCartItem(cartItem);
+        phoneToCartItemRepository.deleteByCartItem(cartItem);
         cartItemRepository.delete(cartItem);
     }
 

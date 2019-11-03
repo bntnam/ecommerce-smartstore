@@ -3,15 +3,15 @@ package com.bntn.smartstore.model;
 import javax.persistence.*;
 
 @Entity
-public class BookToCartItem {
+public class PhoneToCartItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "book_id")
-    private Book book;
+    @JoinColumn(name = "phone_id")
+    private Phone phone;
 
     @ManyToOne
     @JoinColumn(name = "cart_item_id")
@@ -25,12 +25,12 @@ public class BookToCartItem {
         this.id = id;
     }
 
-    public Book getBook() {
-        return book;
+    public Phone getPhone() {
+        return phone;
     }
 
-    public void setBook(Book book) {
-        this.book = book;
+    public void setPhone(Phone phone) {
+        this.phone = phone;
     }
 
     public CartItem getCartItem() {

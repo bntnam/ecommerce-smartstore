@@ -6,36 +6,20 @@
 <body>
     <div th:replace="common/layout :: navbar"/>
 
-    <div class="container" style="margin-top: -30px">
-
-        <div class="row" style="margin-bottom: -100px;">
-            <div class="col-xs-8">
-                <h2 class="section-headline">
-                    <h2 class="section-headline"><span th:text="${#strings.toUpperCase(user.username)}"></span></h2>
-                </h2>
-            </div>
-            <div class="col-xs-4" style="margin-bottom: -75px">
-                <img src="/image/logo.png" class="img-responsive"/>
-            </div>
-
-            <hr style="position: absolute; width: 90%; height: 6px; background-color: #333; z-index: -1; margin-top: 140px;"/>
-
-            <img src="/image/wood.png" class="img-responsive" style="margin-top: -75px"/>
-        </div>
-
-        <div class="row" style="margin-top: 150px">
-            <div class="col-xs-9 col-xs-offset-3">
+    <div class="container" style="min-height: calc(100vh - 130px);">
+        <div class="row" style="margin-top: 50px; margin-bottom: 50px;">
+            <div class="col-xs-offset-2 col-xs-8 col-xs-offset-2">
 
                 <!--Nav tabs-->
                 <ul class="nav nav-tabs">
                     <li th:classappend="${classActiveEdit}? 'active'"><a href="#tab-1" data-toggle="tab"><span
-                            style="color: red;">Edit</span></a></li>
+                            style="color: #000000;">Edit</span></a></li>
                     <li th:classappend="${classActiveOrder}? 'active'"><a href="#tab-2" data-toggle="tab"><span
-                            style="color: red;">Order</span></a></li>
+                            style="color: #000000;">Order</span></a></li>
                     <li th:classappend="${classActiveBilling}? 'active'"><a href="#tab-3" data-toggle="tab"><span
-                            style="color: red;">Billing</span></a></li>
+                            style="color: #000000;">Billing</span></a></li>
                     <li th:classappend="${classActiveShipping}? 'active'"><a href="#tab-4" data-toggle="tab"><span
-                            style="color: red;">Shipping</span></a></li>
+                            style="color: #000000;">Shipping</span></a></li>
                 </ul>
 
                 <!--Tab panels-->
@@ -85,19 +69,11 @@
                                             <input type="password" class="form-control" id="currentPassword"
                                                    name="password" th:value="${currentPassword}"/>
                                         </div>
-                                        <p style="color: #828282">Enter your current password to change the email
-                                            address or password.</p>
-
                                         <div class="form-group">
                                             <label for="email">Email Address:</label>
                                             <input type="text" class="form-control" id="email"
                                                    name="email" th:value="${user.email}"/>
                                         </div>
-                                        <p style="color: #828282">A valid email address. All emails from the system
-                                            will be sent to this address. The email address is not made public and
-                                            will only be used if you wish to receive a new password or certain
-                                            notifications.</p>
-
                                         <div class="form-group">
                                             <label for="txtNewPassword">Password:</label>
                                             <input type="password" class="form-control" id="txtNewPassword"
@@ -108,9 +84,6 @@
                                             <label for="txtConfirmPassword">Confirm Password:</label>&nbsp;<span id="checkPasswordMatch" style="color: red;"></span>
                                             <input type="password" class="form-control" id="txtConfirmPassword"/>
                                         </div>
-                                        <p style="color: #828282">To change the current user password, enter the new
-                                            password in both fields.</p>
-
                                         <button id="updateUserInfoButton" type="submit" class="btn btn-primary">Save All</button>
                                     </form>
                                 </div>
@@ -209,8 +182,8 @@
                                                             </thead>
                                                             <tbody>
                                                                 <tr th:each="cartItem : ${cartItemList}">
-                                                                    <td data-th-text="${cartItem.book.title}"></td>
-                                                                    <td class="text-center" data-th-text="${cartItem.book.ourPrice}"></td>
+                                                                    <td data-th-text="${cartItem.phone.title}"></td>
+                                                                    <td class="text-center" data-th-text="${cartItem.phone.ourPrice}"></td>
                                                                     <td class="text-center" data-th-text="${cartItem.qty}"></td>
                                                                     <td class="text-center" data-th-text="${cartItem.subtotal}"></td>
                                                                 </tr>
@@ -260,7 +233,7 @@
                                         </li>
                                         <li class="breadscrumb-item active">
                                             <a th:href="@{/addNewCreditCard}"
-                                               th:style="${addNewCreditCard}? 'color:red'">Add(Update) Credit Card</a>
+                                               th:style="${addNewCreditCard}? 'color:red'">Edit Credit Card</a>
                                         </li>
                                     </ol>
 
@@ -490,7 +463,7 @@
                                         </li>
                                         <li class="breadscrumb-item active">
                                             <a th:href="@{/addNewShippingAddress}"
-                                               th:style="${addNewShippingAddress}? 'color:red'">Add(Update) Shipping
+                                               th:style="${addNewShippingAddress}? 'color:red'">Edit Shipping
                                                 Addresses</a>
                                         </li>
                                     </ol>

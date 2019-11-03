@@ -20,19 +20,19 @@
 
     <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}"/>
 
-    <link rel="icon" th:href="@{/image/icon.png}"/>
+    <link rel="icon" th:href="@{/image/favicon.ico}"/>
 </head>
 
 <body>
     <div th:fragment="navbar">
-        <nav class="navbar navbar-default navbar-inverse">
+        <nav class="navbar navbar-default navbar-inverse" style="background-color: #000000">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" th:href="@{/}">SMARTSTORE</a>
                 </div>
                 <div id="navbar">
                     <ul class="nav navbar-nav navbar-right">
-                        <form class="navbar-form" th:action="@{/searchBook}" method="post">
+                        <form class="navbar-form" th:action="@{/searchPhone}" method="post">
                             <div class="form-group">
                                 <input type="text" name="keyword" class="form-control" placeholder="Find your phone"/>
                             </div>

@@ -7,24 +7,10 @@
     <div th:replace="common/layout :: navbar"/>
 
     <div class="container" style="margin-top: -30px">
-
-        <div class="row" style="margin-bottom: -100px;">
-            <div class="col-xs-8">
-                <h2 class="section-headline">
-                    <h2 class="section-headline"><span
-                            th:text="${user} ? ${#strings.toUpperCase(user.username)} : 'All Books'"></span></h2>
-                </h2>
-            </div>
-            <div class="col-xs-4" style="margin-bottom: -75px">
-                <img src="/image/logo.png" class="img-responsive"/>
-            </div>
-
-            <hr style="position: absolute; width: 90%; height: 6px; background-color: #333; z-index: -1; margin-top: 140px;"/>
-
-            <img src="/image/wood.png" class="img-responsive" style="margin-top: -75px"/>
+        <div class="row">
+            <img src="/image/iphone-cover.png" class="img-responsive" style="margin: 100px auto;"/>
         </div>
-
-        <div class="row" style="margin-top: 150px;">
+        <div class="row" style="width: 90%; margin: 0 auto; margin-bottom: 100px;">
             <div class="col-xs-12">
                 <div class="row">
                     <div class="col-xs-6 text-left">
@@ -55,33 +41,33 @@
                         <form th:action="@{/shoppingCart/updateCartItem}" method="post">
                             <hr/>
                             <div class="col-xs-2">
-                                <a th:href="@{bookDetail(id=${cartItem.book.id})}">
-                                    <img style="width: 70%;" class="img-responsive shelf-book"
-                                         th:src="@{/image/book/}+${cartItem.book.id}+'.png'"/>
+                                <a th:href="@{phoneDetail(id=${cartItem.phone.id})}">
+                                    <img style="width: 70%;" class="img-responsive shelf-phone"
+                                         th:src="@{/image/phone/}+${cartItem.phone.id}+'.png'"/>
                                 </a>
                             </div>
                             <div class="col-xs-6">
                                 <div style="margin-left:50px;">
-                                    <a th:href="@{/bookDetail?id=}+${cartItem.book.id}"><h4
-                                            th:text="${cartItem.book.title}"></h4></a>
-                                    <p th:if="${cartItem.book.inStockNumber&gt;10}" style="color: green;">In Stock</p>
-                                    <p th:if="${cartItem.book.inStockNumber&lt;10 and cartItem.book.inStockNumber&gt;0}"
-                                       style="color: green;">Only <span th:text="${cartItem.book.inStockNumber}"></span>
+                                    <a th:href="@{/phoneDetail?id=}+${cartItem.phone.id}"><h4
+                                            th:text="${cartItem.phone.title}"></h4></a>
+                                    <p th:if="${cartItem.phone.inStockNumber&gt;10}" style="color: green;">In Stock</p>
+                                    <p th:if="${cartItem.phone.inStockNumber&lt;10 and cartItem.phone.inStockNumber&gt;0}"
+                                       style="color: green;">Only <span th:text="${cartItem.phone.inStockNumber}"></span>
                                         In Stock</p>
-                                    <p th:if="${cartItem.book.inStockNumber==0}" style="color: darkred">Product
+                                    <p th:if="${cartItem.phone.inStockNumber==0}" style="color: darkred">Product
                                         Unavailable</p>
                                     <a th:href="@{/shoppingCart/removeItem?id=}+${cartItem.id}">Delete</a>
                                 </div>
                             </div>
                             <div class="col-xs-2">
-                                <h5 style="color: #db3200; font-size: large">$<span th:text="${cartItem.book.ourPrice}"
-                                                                                    th:style="${cartItem.book.inStockNumber}==0 ? 'text-decoration: line-through' : ''"></span>
+                                <h5 style="color: #db3200; font-size: large">$<span th:text="${cartItem.phone.ourPrice}"
+                                                                                    th:style="${cartItem.phone.inStockNumber}==0 ? 'text-decoration: line-through' : ''"></span>
                                 </h5>
                             </div>
                             <div class="col-xs-2">
                                 <input hidden="hidden" th:name="id" th:value="${cartItem.id}"/>
                                 <input th:id="${cartItem.id}" th:name="qty"
-                                       th:disabled="${cartItem.book.inStockNumber}==0"
+                                       th:disabled="${cartItem.phone.inStockNumber}==0"
                                        class="form-control cartItemQty" th:value="${cartItem.qty}"/>
                                 <button style="display: none;" th:id="'update-item-'+${cartItem.id}" type="submit"
                                         class="btn btn-warning btn-xs">Update
@@ -99,7 +85,6 @@
                 </div>
             </div>
         </div>
-
     </div> <!-- End of container -->
     <div th:replace="common/layout :: footer"/>
     <div th:replace="common/layout :: body-bottom-scripts"/>

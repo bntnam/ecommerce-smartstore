@@ -405,23 +405,23 @@
                                     <div class="row" th:each="cartItem : ${cartItemList}">
                                         <hr/>
                                         <div class="col-xs-2">
-                                            <a th:href="@{/bookDetail(id=${cartItem.book.id})}">
-                                                <img class="img-responsive shelf-book"
-                                                     th:src="@{/image/book/}+${cartItem.book.id}+'.png'"
+                                            <a th:href="@{/phoneDetail(id=${cartItem.phone.id})}">
+                                                <img class="img-responsive shelf-phone"
+                                                     th:src="@{/image/phone/}+${cartItem.phone.id}+'.png'"
                                                      style="width: 70px;"/>
                                             </a>
                                         </div>
                                         <div class="col-xs-6">
                                             <div style="margin-left:50px;">
-                                                <a th:href="@{/bookDetail?id=}+${cartItem.book.id}"><h4
-                                                        th:text="${cartItem.book.title}"></h4></a>
-                                                <p th:if="${cartItem.book.inStockNumber&gt;10}" style="color: green;">In
+                                                <a th:href="@{/phoneDetail?id=}+${cartItem.phone.id}"><h4
+                                                        th:text="${cartItem.phone.title}"></h4></a>
+                                                <p th:if="${cartItem.phone.inStockNumber&gt;10}" style="color: green;">In
                                                     Stock</p>
-                                                <p th:if="${cartItem.book.inStockNumber&lt;10 and cartItem.book.inStockNumber&gt;0}"
+                                                <p th:if="${cartItem.phone.inStockNumber&lt;10 and cartItem.phone.inStockNumber&gt;0}"
                                                    style="color: green;">Only <span
-                                                        th:text="${cartItem.book.inStockNumber}"></span>
+                                                        th:text="${cartItem.phone.inStockNumber}"></span>
                                                     In Stock</p>
-                                                <p th:if="${cartItem.book.inStockNumber==0}" style="color: darkred">
+                                                <p th:if="${cartItem.phone.inStockNumber==0}" style="color: darkred">
                                                     Product
                                                     Unavailable</p>
                                                 <a th:href="@{/shoppingCart/removeItem?id=}+${cartItem.id}">Delete</a>
@@ -429,8 +429,8 @@
                                         </div>
                                         <div class="col-xs-2">
                                             <h5 style="color: #db3200; font-size: large">$<span
-                                                    th:text="${cartItem.book.ourPrice}"
-                                                    th:style="${cartItem.book.inStockNumber}==0 ? 'text-decoration: line-through' : ''"></span>
+                                                    th:text="${cartItem.phone.ourPrice}"
+                                                    th:style="${cartItem.phone.inStockNumber}==0 ? 'text-decoration: line-through' : ''"></span>
                                             </h5>
                                         </div>
                                         <div class="col-xs-2">

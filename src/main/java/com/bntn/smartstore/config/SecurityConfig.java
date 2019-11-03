@@ -34,9 +34,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/login",
             "/fonts/**",
             "/smartStore",
-            "/bookDetail",
+            "/phoneDetail",
             "/searchByCategory",
-            "/searchBook"
+            "/searchPhone"
     };
 
     @Autowired
