@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Book {
+public class Phone {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,11 +31,11 @@ public class Book {
     private int inStockNumber;
 
     @Transient
-    private MultipartFile bookImage;
+    private MultipartFile phoneImage;
 
-    @OneToMany(mappedBy = "book")
+    @OneToMany(mappedBy = "phone")
     @JsonIgnore
-    private List<BookToCartItem> bookToCartItems;
+    private List<PhoneToCartItem> phoneToCartItems;
 
     public Long getId() {
         return id;
@@ -165,19 +165,19 @@ public class Book {
         this.inStockNumber = inStockNumber;
     }
 
-    public MultipartFile getBookImage() {
-        return bookImage;
+    public MultipartFile getPhoneImage() {
+        return phoneImage;
     }
 
-    public void setBookImage(MultipartFile bookImage) {
-        this.bookImage = bookImage;
+    public void setPhoneImage(MultipartFile phoneImage) {
+        this.phoneImage = phoneImage;
     }
 
-    public List<BookToCartItem> getBookToCartItems() {
-        return bookToCartItems;
+    public List<PhoneToCartItem> getPhoneToCartItems() {
+        return phoneToCartItems;
     }
 
-    public void setBookToCartItems(List<BookToCartItem> bookToCartItems) {
-        this.bookToCartItems = bookToCartItems;
+    public void setPhoneToCartItems(List<PhoneToCartItem> phoneToCartItems) {
+        this.phoneToCartItems = phoneToCartItems;
     }
 }

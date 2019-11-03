@@ -1,8 +1,8 @@
 package com.bntn.smartstore.controller;
 
-import com.bntn.smartstore.model.Book;
+import com.bntn.smartstore.model.Phone;
 import com.bntn.smartstore.model.User;
-import com.bntn.smartstore.service.BookService;
+import com.bntn.smartstore.service.PhoneService;
 import com.bntn.smartstore.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,7 +21,7 @@ public class SearchController {
     private UserService userService;
 
     @Autowired
-    private BookService bookService;
+    private PhoneService phoneService;
 
     @RequestMapping("/searchByCategory")
     public String searchByCategory(@RequestParam("category") String category,
@@ -38,20 +38,20 @@ public class SearchController {
         classActiveCategory = classActiveCategory.replaceAll("&", "");
         model.addAttribute(classActiveCategory, true);
 
-        List<Book> bookList = bookService.findByCategory(category);
+        List<Phone> phoneList = phoneService.findByCategory(category);
 
-        if (bookList.isEmpty()) {
+        if (phoneList.isEmpty()) {
             model.addAttribute("emptyList", true);
             return "smartStore";
         }
 
-        model.addAttribute("bookList", bookList);
+        model.addAttribute("phoneList", phoneList);
 
         return "smartStore";
     }
 
-    @RequestMapping("/searchBook")
-    public String searchBook(@ModelAttribute("keyword") String keyword,
+    @RequestMapping("/searchPhone")
+    public String searchPhone(@ModelAttribute("keyword") String keyword,
                              Principal principal,
                              Model model) {
         if (principal != null) {
@@ -60,14 +60,14 @@ public class SearchController {
             model.addAttribute("user", user);
         }
 
-        List<Book> bookList = bookService.blurrySearch(keyword);
+        List<Phone> phoneList = phoneService.blurrySearch(keyword);
 
-        if (bookList.isEmpty()) {
+        if (phoneList.isEmpty()) {
             model.addAttribute("emptyList", true);
             return "smartStore";
         }
 
-        model.addAttribute("bookList", bookList);
+        model.addAttribute("phoneList", phoneList);
 
         return "smartStore";
     }

@@ -27,7 +27,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         List<CartItem> cartItemList = cartItemService.findByShoppingCart(shoppingCart);
 
         for (CartItem cartItem : cartItemList) {
-            if (cartItem.getBook().getInStockNumber() > 0) {
+            if (cartItem.getPhone().getInStockNumber() > 0) {
                 cartItemService.updateCartItem(cartItem);
                 cartTotal = cartTotal.add(cartItem.getSubtotal());
             }

@@ -32,27 +32,27 @@
                     <h5 style="font-style: italic">Oops, no result is found. Try something else or try again later!</h5>
                 </div>
 
-                <table border="0" id="bookList">
+                <table border="0" id="phoneList">
                     <thead>
                         <tr>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="book-item" data-th-each="book : ${bookList}">
+                        <tr class="phone-item" data-th-each="phone : ${phoneList}">
                             <td>
-                                <div th:if="${book != null}">
+                                <div th:if="${phone != null}">
                                     <div class="row" style="margin-bottom: 50px;">
                                         <div class="col-xs-3">
-                                            <a th:href="@{/bookDetail?id=}+${book.id}"><img th:src="@{/image/book/}+${book.id}+'.png'" alt="" class="img-responsive shelf-book"/></a>
+                                            <a th:href="@{/phoneDetail?id=}+${phone.id}"><img th:src="@{/image/phone/}+${phone.id}+'.png'" alt="" class="img-responsive shelf-phone"/></a>
                                         </div>
                                         <div class="col-xs-9">
-                                            <a th:href="@{/bookDetail?id=}+${book.id}"><h4 th:text="${book.title}" style="display: inline;"></h4></a>
-                                            <small th:text="${book.publicationDate}"></small> <br/>
-                                            by <i><span th:text="${book.author}"></span></i> <br/>
-                                            <a th:href="@{/bookDetail?id=}+${book.id}"><span style="font-size: x-large; color: #db3208;">$<span th:text="${#numbers.formatDecimal(book.ourPrice, 0, 'COMMA', 2, 'POINT')}"></span></span></a>
-                                            <span style="text-decoration: line-through">$<span th:text="${#numbers.formatDecimal(book.listPrice, 0, 'COMMA', 2, 'POINT')}"></span></span>
-                                            <p th:utext="${#strings.abbreviate(book.description, 2000)}"></p>
+                                            <a th:href="@{/phoneDetail?id=}+${phone.id}"><h4 th:text="${phone.title}" style="display: inline;"></h4></a>
+                                            <small th:text="${phone.publicationDate}"></small> <br/>
+                                            by <i><span th:text="${phone.author}"></span></i> <br/>
+                                            <a th:href="@{/phoneDetail?id=}+${phone.id}"><span style="font-size: x-large; color: #db3208;">$<span th:text="${#numbers.formatDecimal(phone.ourPrice, 0, 'COMMA', 2, 'POINT')}"></span></span></a>
+                                            <span style="text-decoration: line-through">$<span th:text="${#numbers.formatDecimal(phone.listPrice, 0, 'COMMA', 2, 'POINT')}"></span></span>
+                                            <p th:utext="${#strings.abbreviate(phone.description, 2000)}"></p>
                                         </div>
                                     </div>
                                 </div>
@@ -70,15 +70,15 @@
     <div th:replace="common/layout :: body-bottom-scripts"/>
     <script>
         $(document).ready(function () {
-            $('#bookList').DataTable({
+            $('#phoneList').DataTable({
                 "lengthMenu":[[5,10,15,20,-1],[5,10,15,20,"All"]],
                 "ordering": false,
                 stateSave: true
             });
 
-            $('#bookList').on('page.dt', function () {
+            $('#phoneList').on('page.dt', function () {
                 $('html, body').animate({
-                   scrollTop: $('#bookList').offset().top
+                   scrollTop: $('#phoneList').offset().top
                 }, 200);
             })
         })
