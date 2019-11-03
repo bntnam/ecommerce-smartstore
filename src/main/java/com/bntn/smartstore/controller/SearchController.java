@@ -1,8 +1,8 @@
 package com.bntn.smartstore.controller;
 
-import com.bntn.smartstore.model.Book;
+import com.bntn.smartstore.model.Phone;
 import com.bntn.smartstore.model.User;
-import com.bntn.smartstore.service.BookService;
+import com.bntn.smartstore.service.PhoneService;
 import com.bntn.smartstore.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,10 +21,10 @@ public class SearchController {
     private UserService userService;
 
     @Autowired
-    private BookService bookService;
+    private PhoneService phoneService;
 
-    @RequestMapping("/searchByCategory")
-    public String searchByCategory(@RequestParam("category") String category,
+    @RequestMapping("/searchByBrand")
+    public String searchByBrand(@RequestParam("brand") String brand,
                                    Model model,
                                    Principal principal) {
         if (principal != null) {
@@ -33,25 +33,25 @@ public class SearchController {
             model.addAttribute("user", user);
         }
 
-        String classActiveCategory = "active" + category;
-        classActiveCategory = classActiveCategory.replaceAll("\\s+", "");
-        classActiveCategory = classActiveCategory.replaceAll("&", "");
-        model.addAttribute(classActiveCategory, true);
+        String classActiveBrand = "active" + brand;
+        classActiveBrand = classActiveBrand.replaceAll("\\s+", "");
+        classActiveBrand = classActiveBrand.replaceAll("&", "");
+        model.addAttribute(classActiveBrand, true);
 
-        List<Book> bookList = bookService.findByCategory(category);
+        List<Phone> phoneList = phoneService.findByBrand(brand);
 
-        if (bookList.isEmpty()) {
+        if (phoneList.isEmpty()) {
             model.addAttribute("emptyList", true);
             return "smartStore";
         }
 
-        model.addAttribute("bookList", bookList);
+        model.addAttribute("phoneList", phoneList);
 
         return "smartStore";
     }
 
-    @RequestMapping("/searchBook")
-    public String searchBook(@ModelAttribute("keyword") String keyword,
+    @RequestMapping("/searchPhone")
+    public String searchPhone(@ModelAttribute("keyword") String keyword,
                              Principal principal,
                              Model model) {
         if (principal != null) {
@@ -60,14 +60,14 @@ public class SearchController {
             model.addAttribute("user", user);
         }
 
-        List<Book> bookList = bookService.blurrySearch(keyword);
+        List<Phone> phoneList = phoneService.blurrySearch(keyword);
 
-        if (bookList.isEmpty()) {
+        if (phoneList.isEmpty()) {
             model.addAttribute("emptyList", true);
             return "smartStore";
         }
 
-        model.addAttribute("bookList", bookList);
+        model.addAttribute("phoneList", phoneList);
 
         return "smartStore";
     }

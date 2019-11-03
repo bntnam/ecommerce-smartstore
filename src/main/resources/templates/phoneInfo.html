@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="common/admin-layout :: head"/>
+
+<body>
+    <div th:replace="common/admin-layout :: navbar"/>
+
+    <div class="container">
+        <div>
+            <ol class="breadcrumb">
+                <li><a th:href="@{/admin/phone/phoneList}"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>Go back</a></li>
+                <li><a th:href="@{/admin/phone/updatePhone?id=}+${phone.id}">Edit</a></li>
+            </ol>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <img th:src="@{/image/phone/}+${phone.id}+'.png'" class="img-responsive center-block" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-9">
+                <h3 th:text="${phone.model}"></h3>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <p><strong>Company: </strong><span th:text="${phone.company}"></span></p>
+                        <p><strong>Brand: </strong><span th:text="${phone.brand}"></span></p>
+                    </div>
+                    <div class="col-xs-6">
+                        <p><strong>ASIN: </strong><span th:text="${phone.asin}"></span></p>
+                        <p><strong>Shipping Weight: </strong><span th:text="${phone.shippingWeight}"></span></p>
+                        <p><strong>List Price: </strong><span th:text="${phone.listPrice}"></span></p>
+                        <p><strong>Our Price: </strong><span th:text="${phone.ourPrice}"></span></p>
+                        <p><strong>Number in Stock: </strong><span th:text="${phone.inStockNumber}"></span></p>
+                    </div>
+                </div>
+
+                <p><strong>Description: </strong><span th:utext="${phone.description}"></span></p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div th:replace="common/admin-layout :: body-bottom-scripts"/>
+</body>
+</html>

@@ -1,12 +1,12 @@
 $(document).ready(function () {
-    $('.delete-book').on('click', function () {
+    $('.delete-phone').on('click', function () {
         /*<![CDATA[*/
         var path = /*[[@{/]]*/'remove';
         /*]]>*/
         var id = $(this).attr('id');
 
         bootbox.confirm({
-            message: "Are you sure to remove this book? It can't be undone.",
+            message: "Are you sure to remove this phone? It can't be undone.",
             buttons: {
                 cancel: {
                     label: '<i class="fa fa-times"></i> Cancel'

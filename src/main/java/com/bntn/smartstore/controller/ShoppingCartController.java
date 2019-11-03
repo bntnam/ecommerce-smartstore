@@ -1,10 +1,10 @@
 package com.bntn.smartstore.controller;
 
-import com.bntn.smartstore.model.Book;
+import com.bntn.smartstore.model.Phone;
 import com.bntn.smartstore.model.CartItem;
 import com.bntn.smartstore.model.ShoppingCart;
 import com.bntn.smartstore.model.User;
-import com.bntn.smartstore.service.BookService;
+import com.bntn.smartstore.service.PhoneService;
 import com.bntn.smartstore.service.CartItemService;
 import com.bntn.smartstore.service.ShoppingCartService;
 import com.bntn.smartstore.service.UserService;
@@ -32,7 +32,7 @@ public class ShoppingCartController {
     private ShoppingCartService shoppingCartService;
 
     @Autowired
-    private BookService bookService;
+    private PhoneService phoneService;
 
     @RequestMapping("/cart")
     public String shoppingCart(Model model,
@@ -51,23 +51,23 @@ public class ShoppingCartController {
     }
 
     @RequestMapping("/addItem")
-    public String addItem(@ModelAttribute("book") Book book,
+    public String addItem(@ModelAttribute("phone") Phone phone,
                           @ModelAttribute("qty") String qty,
                           Model model,
                           Principal principal) {
 
         User user = userService.findByUsername(principal.getName());
-        book = bookService.findOne(book.getId());
+        phone = phoneService.findOne(phone.getId());
 
-        if (Integer.parseInt(qty) > book.getInStockNumber()) {
+        if (Integer.parseInt(qty) > phone.getInStockNumber()) {
             model.addAttribute("notEnoughStock", true);
-            return "forward:/bookDetail?id="+book.getId();
+            return "forward:/phoneDetail?id="+phone.getId();
         }
 
-        CartItem cartItem = cartItemService.addBookToCartItem(book, user, Integer.parseInt(qty));
-        model.addAttribute("addBookSuccess", true);
+        CartItem cartItem = cartItemService.addPhoneToCartItem(phone, user, Integer.parseInt(qty));
+        model.addAttribute("addPhoneSuccess", true);
 
-        return "forward:/bookDetail?id="+book.getId();
+        return "forward:/phoneDetail?id="+phone.getId();
     }
 
     @RequestMapping("/updateCartItem")

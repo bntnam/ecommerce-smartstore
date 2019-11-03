@@ -39,7 +39,7 @@ public class HomeController {
     private UserSecurityService userSecurityService;
 
     @Autowired
-    private BookService bookService;
+    private PhoneService phoneService;
 
     @Autowired
     private UserPaymentService userPaymentService;
@@ -60,8 +60,17 @@ public class HomeController {
     private OrderService orderService;
 
     @RequestMapping("/")
-    public String index() {
+    public String index(Model model,
+                        Principal principal) {
+        if (principal != null) {
+            String username = principal.getName();
+            User user = userService.findByUsername(username);
+            model.addAttribute("user", user);
+        }
 
+        List<Phone> phoneList = phoneService.findAll();
+        model.addAttribute("phoneList", phoneList);
+        model.addAttribute("activeAll", true);
         return "smartStore";
     }
 
@@ -84,24 +93,24 @@ public class HomeController {
         return "403";
     }
 
-    @RequestMapping("/smartStore")
-    public String smartStore(Model model,
-                            Principal principal) {
-        if (principal != null) {
-            String username = principal.getName();
-            User user = userService.findByUsername(username);
-            model.addAttribute("user", user);
-        }
+    // @RequestMapping("/smartStore")
+    // public String smartStore(Model model,
+    //                          Principal principal) {
+    //     if (principal != null) {
+    //         String username = principal.getName();
+    //         User user = userService.findByUsername(username);
+    //         model.addAttribute("user", user);
+    //     }
 
-        List<Book> bookList = bookService.findAll();
-        model.addAttribute("bookList", bookList);
-        model.addAttribute("activeAll", true);
+    //     List<Phone> phoneList = phoneService.findAll();
+    //     model.addAttribute("phoneList", phoneList);
+    //     model.addAttribute("activeAll", true);
 
-        return "smartStore";
-    }
+    //     return "smartStore";
+    // }
 
-    @RequestMapping("/bookDetail")
-    public String bookDetail(
+    @RequestMapping("/phoneDetail")
+    public String phoneDetail(
             @PathParam("id") Long id,
             Model model,
             Principal principal) {
@@ -111,14 +120,14 @@ public class HomeController {
             model.addAttribute("user", user);
         }
 
-        Book book = bookService.findOne(id);
-        model.addAttribute("book", book);
+        Phone phone = phoneService.findOne(id);
+        model.addAttribute("phone", phone);
 
         List<Integer> qtyList = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         model.addAttribute("qtyList", qtyList);
         model.addAttribute("qty", 1);
 
-        return "bookDetail";
+        return "phoneDetail";
     }
 
     @RequestMapping("/forgetPassword")
@@ -409,8 +418,8 @@ public class HomeController {
 
     @RequestMapping(value = "/setDefaultShippingAddress", method = RequestMethod.POST)
     public String setDefaultShippingAddress(@ModelAttribute("defaultShippingAddressId") Long defaultShippingId,
-                                     Principal principal,
-                                     Model model) {
+                                            Principal principal,
+                                            Model model) {
         User user = userService.findByUsername(principal.getName());
         userService.setUserDefaultShipping(defaultShippingId, user);
 
@@ -429,8 +438,8 @@ public class HomeController {
 
     @RequestMapping("/removeUserShipping")
     public String removeUserShipping(@ModelAttribute("id") Long userShippingId,
-                                   Principal principal,
-                                   Model model) {
+                                     Principal principal,
+                                     Model model) {
         User user = userService.findByUsername(principal.getName());
         UserShipping userShipping = userShippingService.findById(userShippingId);
 

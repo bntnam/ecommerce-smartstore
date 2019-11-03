@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="common/admin-layout :: head"/>
+
+<body>
+    <div th:replace="common/admin-layout :: navbar"/>
+
+    <div class="container">
+        <div class="row">
+            <form class="form-horizontal" th:action="@{/admin/phone/add}" method="post" enctype="multipart/form-data">
+                <fieldset>
+                    <legend class="center-block">
+                        New Phone Information
+                        <span style="font-size: small"> * is a required field</span>
+                    </legend>
+
+
+                    <!-- Model -->
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="model">* Model</label>
+
+                        <div class="col-md-8">
+                            <input type="text" name="model" class="form-control" id="model"
+                                   th:value="${phone.model}" required="required" placeholder="Model"/>
+                            <span class="help-block">Model of the phone</span>
+                        </div>
+                    </div>
+
+                    <!-- Company -->
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="company">* Company</label>
+                        <div class="col-md-8">
+                            <input type="text" name="company" class="form-control" id="company"
+                                   th:value="${phone.company}" required="required"
+                                   placeholder="Company"/>
+                            <span class="help-block">Company of the phone</span>
+                        </div>
+                    </div>
+
+                    <!-- Brand -->
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="brand">*
+                            Brand</label>
+                        <div class="col-md-8">
+                            <select th:value="${phone.brand}" id="brand" name="brand"
+                                    class="form-control">
+                                <option value="" selected="selected" disabled="disabled">
+                                    Please select an option...
+                                </option>
+                                <option value="Apple"
+                                        th:selected="(${phone.brand}=='Apple')">Apple
+                                </option>
+                                <option value="Huawei"
+                                        th:selected="(${phone.brand}=='Huawei')">Huawei
+                                </option>
+                                <option value="Google"
+                                        th:selected="(${phone.brand}=='Google')">Google
+                                </option>
+                                <option value="Samsung"
+                                        th:selected="(${phone.brand}=='Samsung')">Samsung
+                                </option>
+                                <option value="Sony"
+                                        th:selected="(${phone.brand}=='Sony')">Sony
+                                </option>
+                                <option value="Nokia"
+                                        th:selected="(${phone.brand}=='Nokia')">Nokia
+                                </option>
+                                <option value="OnePlus"
+                                        th:selected="(${phone.brand}=='OnePlus')">OnePlus
+                                </option>
+                                <option value="Oppo"
+                                        th:selected="(${phone.brand}=='Oppo')">Oppo
+                                </option>
+                                <option value="Other"
+                                        th:selected="(${phone.brand}=='Other')">Other
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- ASIN -->
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="asin">ASIN</label>
+
+                        <div class="col-md-8">
+                            <input type="text" name="asin" class="form-control" id="asin"
+                                   th:value="${phone.asin}" placeholder="ASIN"/>
+                            <span class="help-block">ASIN of the phone</span>
+                        </div>
+                    </div>
+
+                    <!-- Shipping Weight -->
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="shippingWeight">Shipping
+                            Weight</label>
+                        <div class="col-md-8">
+                            <div class="input-group">
+                                <input th:value="${phone.shippingWeight}" type="number"
+                                       name="shippingWeight" class="form-control" id="shippingWeight" step="0.01"
+                                       placeholder="Shipping Weight"/>
+                                <span class="input-group-addon">Ounces</span>
+                            </div>
+                            <span class="help-block">Shipping Weight of the phone</span>
+                        </div>
+                    </div>
+
+                    <!-- List Price -->
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="listPrice">List
+                            Price</label>
+                        <div class="col-md-8">
+                            <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input th:value="${phone.listPrice}" type="number" name="listPrice" step="0.01"
+                                       class="form-control" id="listPrice" placeholder="List Price"/>
+                            </div>
+                            <span class="help-block">List price of the phone</span>
+                        </div>
+                    </div>
+
+                    <!-- Our Price -->
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="ourPrice">Our
+                            Price</label>
+                        <div class="col-md-8">
+                            <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input th:value="${phone.ourPrice}" type="number" name="ourPrice" step="0.01"
+                                       class="form-control" id="ourPrice" placeholder="Our Price"/>
+                            </div>
+                            <span class="help-block">Our price of the phone</span>
+                        </div>
+                    </div>
+
+                    <!-- In Stock Number -->
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="inStockNumber">Number
+                            in stock</label>
+                        <div class="col-md-8">
+                            <input th:value="${phone.inStockNumber}" type="number"
+                                   name="inStockNumber" class="form-control" id="inStockNumber"
+                                   placeholder="Number of in-stock copies"/>
+                            <span class="help-block">Number of in-stock copies</span>
+                        </div>
+                    </div>
+
+                    <!-- Status Of Phone -->
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="status">Status</label>
+                        <div class="col-md-8">
+                            <label><input value="true" type="radio" name="active" checked="checked"/> Active </label>
+                            <label><input value="false" type="radio" name="active"/> Inactive </label>
+                            <span class="help-block">Whether the phone is active or inactive</span>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="description">Description</label>
+                        <div class="col-md-8">
+							<textarea name="description" rows="5" class="form-control"
+                                      id="description" th:value="${phone.description}"
+                                      placeholder="Description"/>
+                            <span class="help-block">Description of the phone</span>
+                        </div>
+                    </div>
+
+                    <!-- Upload Image -->
+                    <div class="form-group">
+                        <div class="col-md-2 control-label">
+                            <label for="phoneImage">Upload phone image</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input id="phoneImage" type="file" name="phoneImage"
+                                   th:value="${phone.phoneImage}"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <button type="submit" class="btn btn-success">Add Phone</button>
+                            <a class="btn btn-danger" th:href="@{/admin}">Cancel</a>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <div th:replace="common/admin-layout :: body-bottom-scripts"/>
+</body>
+</html>

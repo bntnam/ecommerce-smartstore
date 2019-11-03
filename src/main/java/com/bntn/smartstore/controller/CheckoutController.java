@@ -78,7 +78,7 @@ public class CheckoutController {
         }
 
         for (CartItem cartItem : cartItemList) {
-            if (cartItem.getBook().getInStockNumber() < cartItem.getQty()) {
+            if (cartItem.getPhone().getInStockNumber() < cartItem.getQty()) {
                 model.addAttribute("notEnoughStock", true);
                 return "forward:/shoppingCart/cart";
             }
