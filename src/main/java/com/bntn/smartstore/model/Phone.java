@@ -15,7 +15,7 @@ public class Phone {
     private String model;
     private String company;
     private String brand;
-    private int asin;
+    private String asin;
     private double shippingWeight;
     private double listPrice;
     private double ourPrice;
@@ -64,11 +64,11 @@ public class Phone {
         this.brand = brand;
     }
 
-    public int getAsin() {
+    public String getAsin() {
         return asin;
     }
 
-    public void setAsin(int asin) {
+    public void setAsin(String asin) {
         this.asin = asin;
     }
 
