@@ -1,13 +1,13 @@
 <h1>SmartStore Web Application</h1>
 <h3>1. Introduction</h3>
-<p>- Implementation of a web based application for E-commerce system.</p>
+<p>- SmartStore is a website for selling smartphones with the full features for an e-commerce application.</p>
 <h3>2. Technologies</h3>
 <ul>
     <li><strong>Backend:</strong> Java, Spring (Spring Boot, Spring MVC, Spring Data JPA, Spring Security), Hibernate/JPA.</li>
     <li><strong>Frontend:</strong> HTML, CSS, JavaScript, Bootstrap, Thymleaf and some libraries/tools.</li>
     <li><strong>Database:</strong> MySQL.</li>
 </ul>
-<h3>3. Feature</h3>
+<h3>3. Features</h3>
 <p>- There are 2 parts of the project: User and Admin.</p>
 <p>- I created sample User and Admin to let you take a look easier :</p>
 <p><strong>a) User:</strong></p>
