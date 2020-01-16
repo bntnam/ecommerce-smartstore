@@ -1,14 +1,11 @@
-<h1>Bookstore Web Application</h1>
+<h1>SmartStore Web Application</h1>
 <h3>1. Introduction</h3>
-<p>- User interface: <a href="http://bntnam-bookstore.herokuapp.com/">http://bntnam-bookstore.herokuapp.com/</a></p>
-<p>- Admin portal: <a href="http://bntnam-bookstore.herokuapp.com/">http://bntnam-bookstore.herokuapp.com/</a></p>
-<p>- The Webapp and Database are deployed on free hosting Heroku. Therefore, it's gonna take longer at the first time loading. Afterthat, the webapp will run normally.</p>
+<p>- Implementation of a web based application for E-commerce system.</p>
 <h3>2. Technologies</h3>
 <ul>
     <li><strong>Backend:</strong> Java, Spring (Spring Boot, Spring MVC, Spring Data JPA, Spring Security), Hibernate/JPA.</li>
     <li><strong>Frontend:</strong> HTML, CSS, JavaScript, Bootstrap, Thymleaf and some libraries/tools.</li>
     <li><strong>Database:</strong> MySQL.</li>
-    <li><strong>Hosting:</strong> Heroku.</li>
 </ul>
 <h3>3. Feature</h3>
 <p>- There are 2 parts of the project: User and Admin.</p>
@@ -19,14 +16,14 @@
 <ul>
     <li>You can create an account, update information, change password and forget password. Your password will be sent automatically to your registered email.</li>
     <li>Add your shipping address, billing address, card payment information.</li>
-    <li>Search for the books and add them into your shopping cart, then place an order. The verified order will send to your registered email.</li>
+    <li>Search for the phones and add them into your shopping cart, then place an order. The verified order will send to your registered email.</li>
 </ul>
 <p><strong>b) Admin:</strong></p>
 <p>+ ID: admin</p>
 <p>+ Password: admin</p>
 <ul>
-    <li>You can only access admin page with admin ID (the access would be denied if you tried to access with user ID): <a href="http://bntnam-bookstore.herokuapp.com/">http://bntnam-bookstore.herokuapp.com/</a></li>
-    <li>After accessing admin portal, you can add new books, edit and delete.</li>
+    <li>You can only access admin page with admin ID (the access would be denied if you tried to access with user ID)</li>
+    <li>After accessing admin portal, you can add new phones, edit and delete.</li>
 </ul>
 <h3>4. Architecture</h3>
 <p>- Entity-Relationship Diagram</p>
